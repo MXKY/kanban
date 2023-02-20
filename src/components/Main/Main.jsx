@@ -9,9 +9,17 @@ export default class Main extends React.Component {
 
         const mapData = (listName) => {
             return props.data.filter(x => x.list === listName)
-                .sort((firstItem, secondItem) => firstItem.lastTransferDate - secondItem.lastTransferDate)
+                .sort((a, b) => a.lastTransferDate - b.lastTransferDate)
                 .map(x => 
-                    <Task key={x.id} id={x.id} name={x.name} listName={x.list} desc={x.desc} onChangeDesc={props.onChangeDesc} onDeleteTask={props.onDeleteTask} />
+                    <Task 
+                        key={x.id} 
+                        id={x.id} 
+                        name={x.name} 
+                        listName={x.list} 
+                        desc={x.desc} 
+                        onChangeDesc={props.onChangeDesc} 
+                        onDeleteTask={props.onDeleteTask} 
+                    />
                 );
         } 
 
@@ -29,12 +37,15 @@ export default class Main extends React.Component {
                     <List name="Backlog" data={props.data} onAddTask={props.onAddBacklogTask}>
                         {backlogList}
                     </List>
+
                     <List name="Ready" dependentList={backlogList} onAddTask={props.onAddReadyTask}>
                         {readyList}
                     </List>
+
                     <List name="In Progress" dependentList={readyList} onAddTask={props.onAddProgressTask}>
                         {progressList}
                     </List>
+
                     <List name="Finished" dependentList={progressList} onAddTask={props.onAddFinishedTask}>
                         {finishedList}
                     </List>

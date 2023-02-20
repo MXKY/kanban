@@ -25,13 +25,11 @@ export default class List extends React.Component {
             inputRef.current.focus();
             submitBtnRef.current.scrollIntoView();
         }, 0);
-        
     }
 
     onSubmitButtonClick = (e) => {
-        if (e.code !== undefined && e.code !== "Enter") {
+        if (e.code !== undefined && e.code !== "Enter")
             return;
-        }
 
         this.inputValueProcessing();
 
@@ -49,7 +47,8 @@ export default class List extends React.Component {
                 return;
             }
             
-            if (value.length > 100) value = value.substr(0, 97) + "...";
+            if (value.length > 100) 
+                value = value.substr(0, 97) + "...";
 
             const task = createTask(value);
 
@@ -75,8 +74,21 @@ export default class List extends React.Component {
                     <>{isEdit && <ListSelect inputRef={inputRef} listBoxElements={props.dependentList} />}</>
                 )}
 
-                {isEdit && <button ref={submitBtnRef} className={styles.submit_button} onClick={onSubmitButtonClick}>Submit</button>}
-                {!isEdit && <AddCardButton listName={props.name.toLowerCase()} onClick={onAddButtonClick} disabled={!props.dependentList || props.dependentList.length > 0} />}
+                {isEdit && 
+                    <button 
+                        ref={submitBtnRef} 
+                        className={styles.submit_button} 
+                        onClick={onSubmitButtonClick}
+                    >Submit</button>
+                }
+
+                {!isEdit && 
+                    <AddCardButton 
+                        listName={props.name.toLowerCase()} 
+                        onClick={onAddButtonClick} 
+                        disabled={!props.dependentList || props.dependentList.length > 0} 
+                    />
+                }
             </div>
         );
     }
