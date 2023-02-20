@@ -1,0 +1,172 @@
+@import "../../colors.scss";
+@import "../../animations.scss";
+
+.link {
+    color: black;
+    text-decoration: none;
+    height: 32px;
+}
+
+.parent {
+    .task {
+        background-color: white;
+        border-radius: 5px;
+        margin-top: 15px;
+        padding: 7px;
+
+        cursor: pointer;
+
+        transition-duration: 1s;
+
+        animation: scale_jump2 ease-out .3s;
+
+        &:hover {
+            background-color: $buttonGray;
+            transition-duration: 0s;
+        }
+
+        .title_wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .name {
+                width: 90%;
+                word-wrap: break-word;
+            }
+
+            .cross {
+                min-width: 15px;
+                height: 15px;
+                align-self: center;
+            }
+        }
+    }
+
+    .task_active {
+        @extend .task;
+        background-color: $activeBlue;
+        animation: scale_jump .5s both;
+
+        display: flex;
+        justify-content: space-between;
+
+        .name {
+            width: 90%;
+            color: white;
+            word-wrap: break-word;
+        }
+
+        .cross {
+            opacity: 0;
+        }
+    }
+}
+
+.parent_opened {
+    position: absolute;
+    top: 11vh;
+    left: 2vw;
+
+    width: 94%;
+    height: 73vh;
+
+    animation: smooth_show ease-in .5s;
+
+    z-index: 2;
+
+    @media screen and (max-width: 767px) {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .task {
+        width: 100%;
+        height: 100%;
+
+        background-color: white;
+        border-radius: 5px;
+        padding: 1.5%;
+
+        @media screen and (max-width: 767px) {
+            height: 105vh;
+
+            border-radius: 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 0;
+
+            .name {
+                margin-left: 10px;
+                margin-top: 15px;
+            }
+
+            .cross {
+                margin: 14px;
+            }
+        }
+
+        .title_wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .name {
+                font-size: 24px;
+            }
+            
+            .cross {
+                min-width: 32px;
+                height: 32px;
+                transition-duration: .5s;
+                transition-delay: .1s;
+
+                &:hover {
+                    background-color: $buttonGray;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .textarea {
+            display: block;
+            margin-top: 35px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(100% - 7rem);
+
+            @media screen and (max-width: 767px) {
+                width: 97%;
+                margin-left: 10px;
+                height: calc(95vh - 7rem);
+            }
+
+            border: none;
+
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            resize: none;
+
+            overflow-y: scroll;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 30%;
+
+    @media screen and (max-width: 767px) {
+        height: 100%;
+    }
+}

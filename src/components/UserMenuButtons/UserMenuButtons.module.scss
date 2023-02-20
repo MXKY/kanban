@@ -1,0 +1,62 @@
+@import "../../animations.scss";
+
+.parent {
+    text-align: right;
+    position: absolute;
+    background-color: white;
+
+    top: 4.5rem;
+    right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+
+    padding: 5px;
+
+    z-index: 3;
+
+    animation: smooth_show .3s;
+
+    @media screen and (max-width: 640px) {
+        top: 4.4rem;
+        right: 1rem;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 11px;
+        height: 11px;
+        top: -5px;
+        left: 69px;
+        transform: rotate(45deg);
+    }
+
+    .button {
+        display: flex;
+        flex-direction: column;
+
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 14px;
+        border: none;
+
+        width: 120px;
+        height: 1.5rem;
+        padding: 3px;
+
+        text-align: left;
+
+        cursor: pointer;
+
+        &:hover::after {
+            content: "";
+            width: 110px;
+            height: 1px;
+            background-color: gainsboro;
+        }
+    }
+}

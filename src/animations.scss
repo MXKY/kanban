@@ -1,0 +1,33 @@
+@keyframes slide_show {
+    0% {
+        opacity: 0;
+        min-width: 10px;
+    }
+
+    100% {
+        opacity: 1;
+        min-width: 96%;
+    }
+}
+
+@keyframes smooth_show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale_jump {
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes scale_jump2 {
+    50% {
+        transform: scale(1.02);
+    }
+}

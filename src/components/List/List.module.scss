@@ -1,0 +1,48 @@
+@import "../../colors.scss";
+@import "../../animations.scss";
+@import "../../scrollbars.scss";
+@include scrollbars(12px, 10px, #CBCBCB, white);
+
+.parent {
+    min-width: 280px;
+    max-width: 350px;
+    height: fit-content;
+    max-height: 77vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border-radius: 10px;
+    background-color: $gray;
+    
+    padding: 12px;
+    margin: 20px 5px 0 5px;
+    
+    span {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .submit_button {
+        width: 102px;
+        height: 29px;
+
+        background: $buttonBlue;
+        border-width: 0;
+        border-radius: 5px;
+
+        color: white;
+        font-weight: 400;
+        font-size: 18px;
+
+        margin-top: 12px;
+
+        animation: .3s ease-in smooth_show both;
+
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

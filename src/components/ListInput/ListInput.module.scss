@@ -1,0 +1,25 @@
+@import "../../animations.scss";
+
+.list_input {
+    width: 10%;
+
+    background-color: white;
+
+    border-width: 0px;
+    border-radius: 5px;
+
+    margin-top: 15px;
+    padding: 7px;
+    
+    font-weight: 400;
+    font-size: 18px;
+
+    display: block;
+
+    animation: .5s ease-out slide_show both;
+}
+
+.list_input__error {
+    border-width: 1px;
+    border-color: red;
+}

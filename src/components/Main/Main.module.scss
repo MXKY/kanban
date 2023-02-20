@@ -1,0 +1,17 @@
+@import '../../colors.scss';
+
+.parent {
+    background-color: $blue;
+    min-height: calc(100vh - 80px - 57px);
+
+    @media screen and (max-width: 640px) {
+        min-height: calc(100vh - 80px);
+    }
+
+    .lists_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-bottom: 32px;
+    }
+}

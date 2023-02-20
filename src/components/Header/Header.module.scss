@@ -1,0 +1,23 @@
+@import '../../colors.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $darkBlue;
+    height: 80px;
+
+    @media screen and (max-width: 640px) {
+        justify-content: flex-end;
+        background-color: $blue;
+    }
+
+    .text_logo {
+        margin-left: 2rem;
+        font-weight: 400;
+        color: white;
+        
+        @media screen and (max-width: 640px) {
+            display: none;
+        }
+    }
+}

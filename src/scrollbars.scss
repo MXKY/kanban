@@ -1,0 +1,21 @@
+@mixin scrollbars($size, $border-radius, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+        border-radius: $border-radius;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+        border-radius: $border-radius;
+    }
+
+    body {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}

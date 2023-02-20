@@ -1,0 +1,27 @@
+@import '../../colors.scss';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+    background-color: $darkBlue;
+    
+    @media screen and (max-width: 640px) {
+        display: none;
+    }
+
+    .text {
+        color: white;
+        padding: 17px;
+        font-weight: 400;
+        font-size: 18px;
+
+        @media screen and (max-width: 700px) {
+            font-size: 16px;
+        }
+    }
+
+    .stats {
+        margin: auto 0;
+    }
+}

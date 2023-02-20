@@ -1,0 +1,21 @@
+.menu {
+    display: flex;
+    align-self: center;
+    margin-right: 1rem;
+    cursor: pointer;
+    padding: 0.7rem;
+
+    .logo {
+        color: white;
+    }    
+
+    .arrow {
+        align-self: center;
+        transition-duration: .3s;
+    }
+
+    .arrow_opened {
+        @extend .arrow;
+        transform: rotate(180deg);
+    }
+}
