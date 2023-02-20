@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Routes, useMatch } from "react-router-dom";
 import { ReactComponent as Cross } from "../../assets/cross.svg";
-import styles from "./Task.module.scss";
 import TaskOpened from "./TaskOpened";
+import styles from "./Task.module.scss";
 
 export default function Task(props) {
     const id = props.id;
     const name = props.name;
+    const listName = props.listName;
     let desc = props.desc;
 
     const [isOpen, setOpen] = useState(false);
@@ -16,9 +17,11 @@ export default function Task(props) {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        if (match)
+        if (match) {
             if (match.params.id === id + "")
                 setOpen(true);
+        }
+        else setOpen(false);
     }, [id, match]);
 
     const сlickHandler = () => {
@@ -50,7 +53,7 @@ export default function Task(props) {
     }
 
     const deleteTask = () => {
-        props.onDeleteTask(id);
+        props.onDeleteTask(id, listName);
     }
                
     return (

@@ -73,11 +73,16 @@ export default function App() {
     )));
   }
 
-  const deleteTask = (taskId) => {
+  const deleteTask = (taskId, listName) => {
     const arrCopy = Array.from(tasks);
   
     const objWithIdIndex = arrCopy.findIndex((x) => x.id === taskId);
     arrCopy.splice(objWithIdIndex, 1);
+
+    if (listName === "backlog") 
+      setActiveTasks(activeTasks - 1);
+    else if (listName === "finished")
+      setFinishedTasks(finishedTasks - 1);
 
     setTasks(arrCopy);
   }

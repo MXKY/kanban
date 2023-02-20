@@ -11,7 +11,7 @@ export default class Main extends React.Component {
             return props.data.filter(x => x.list === listName)
                 .sort((firstItem, secondItem) => firstItem.lastTransferDate - secondItem.lastTransferDate)
                 .map(x => 
-                    <Task key={x.id} id={x.id} name={x.name} desc={x.desc} onChangeDesc={props.onChangeDesc} onDeleteTask={props.onDeleteTask} />
+                    <Task key={x.id} id={x.id} name={x.name} listName={x.list} desc={x.desc} onChangeDesc={props.onChangeDesc} onDeleteTask={props.onDeleteTask} />
                 );
         } 
 

@@ -119,6 +119,7 @@
                 height: 32px;
                 transition-duration: .5s;
                 transition-delay: .1s;
+                border-radius: 100%;
 
                 &:hover {
                     background-color: $buttonGray;

@@ -5,17 +5,17 @@ import UserMenuButtons from "../UserMenuButtons/UserMenuButtons";
 import styles from "./UserMenu.module.scss";
 
 export default function UserMenu() {
-    const [opened, setOpened] = useState(false);
+    const [isOpen, setOpen] = useState(false);
 
     function onMenuClick() {
-        setOpened(!opened);
+        setOpen(!isOpen);
     }
 
     return (
         <div className={styles.menu} onClick={onMenuClick}>
             <UserLogo className={styles.logo} />
-            <MenuArrow className={opened ? styles.arrow_opened : styles.arrow}/>
-            {opened && <UserMenuButtons />}
+            <MenuArrow className={isOpen ? styles.arrow_opened : styles.arrow}/>
+            {isOpen && <UserMenuButtons />}
         </div>
     );
 }

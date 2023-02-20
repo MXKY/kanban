@@ -4,10 +4,10 @@
 @include scrollbars(12px, 10px, #CBCBCB, white);
 
 .parent {
-    min-width: 280px;
+    min-width: 282px;
     max-width: 350px;
     height: fit-content;
-    max-height: 77vh;
+    max-height: 72vh;
 
     overflow-x: hidden;
     overflow-y: auto;
