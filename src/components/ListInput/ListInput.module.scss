@@ -17,6 +17,10 @@
     display: block;
 
     animation: .5s ease-out slide_show both;
+
+    &:focus {
+        outline: 0;
+    }
 }
 
 .list_input__error {
