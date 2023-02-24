@@ -29,8 +29,7 @@ export default function App() {
   const onAddBacklogTask = (task) => {
     setActiveTasks(activeTasks + 1);
     
-    tasks.push(task);
-    setTasks(tasks);
+    setTasks(tasks.concat([task]));
   }
 
   const onAddReadyTask = (taskId) => {
